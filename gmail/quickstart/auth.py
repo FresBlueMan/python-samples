@@ -1,6 +1,5 @@
 import os
 
-from apiclient import discovery
 from oauth2client import client
 from oauth2client import tools
 from oauth2client.file import Storage
@@ -21,8 +20,7 @@ class auth:
         credential_dir = os.path.join(cwd_dir, '.credentials')
         if not os.path.exists(credential_dir):
             os.makedirs(credential_dir)
-        credential_path = os.path.join(credential_dir,
-                                       'python-gmail-api-tutorial.json')
+        credential_path = os.path.join(credential_dir,'python-gmail-api-tutorial.json')
 
         store = Storage(credential_path)
         credentials = store.get()

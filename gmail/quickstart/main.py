@@ -1,11 +1,10 @@
 from __future__ import print_function
 import httplib2
-import os
+
 
 from apiclient import discovery
-from oauth2client import client
 from oauth2client import tools
-from oauth2client.file import Storage
+
 
 try:
     import argparse
@@ -14,6 +13,7 @@ except ImportError:
     flags = None
 
 import auth
+
 def get_labels():
     results = service.users().labels().list(userId='me').execute()
     labels = results.get('labels', [])
